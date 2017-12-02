@@ -1,5 +1,7 @@
 .card {
   background-color: #FFF;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
   display: inline-block;
   position: relative;
   width: calc(25% - 2rem);
@@ -9,6 +11,16 @@
     display: inline-block;
     padding-top: 150%;
   }
+}
+
+.card_red {
+  color: red;
+}
+
+.card_used {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: transparent;
 }
 
 .card__card-id {

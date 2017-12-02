@@ -8,7 +8,7 @@ class CardContainer extends React.Component {
   }
 
   printCards() {
-    const data = ['h1', 'h2', 'h3', 'h4'];
+    const data = ['h1', 'd2', 's3', 'c4'];
     return data.map(current => (<Card type={current} />));
   }
 
