@@ -9,7 +9,7 @@ class CardContainer extends React.Component {
 
   printCards() {
     const data = ['h1', 'd2', 's3', 'c4'];
-    return data.map(current => (<Card type={current} />));
+    return data.map((current, index) => (<Card key={index} type={current} />));
   }
 
   render() {
