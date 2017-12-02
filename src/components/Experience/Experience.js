@@ -5,7 +5,7 @@ class Experience extends React.Component {
   render() {
     return (
       <div className="experience">
-        Experience.
+        0 XP
       </div>
     );
   }

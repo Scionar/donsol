@@ -5,7 +5,7 @@ class Shield extends React.Component {
   render() {
     return (
       <div className="shield">
-        Shield.
+        0 DP
       </div>
     );
   }
