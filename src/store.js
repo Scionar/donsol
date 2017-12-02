@@ -1,4 +1,7 @@
 import { createStore } from 'redux';
+import { reducer as addCardReducer } from './redux-actions/add-card';
+import { reducer as removeCardReducer } from './redux-actions/remove-card';
+import { reducer as clearTableReducer } from './redux-actions/clear-table';
 
 const initialState = {
   deck: [
@@ -13,12 +16,20 @@ const initialState = {
   xp: 0
 };
 
-const persistState = localStorage.getItem('reduxState')
-  ? JSON.parse(localStorage.getItem('reduxState'))
-  : initialState;
+// const persistState = localStorage.getItem('reduxState')
+//   ? JSON.parse(localStorage.getItem('reduxState'))
+//   : initialState;
+
+const persistState = initialState;
 
 const rootReducer = (state = persistState, action) => {
   switch (action.type) {
+    case 'ADD_CARD':
+      return addCardReducer(state, action);
+    case 'REMOVE_CARD':
+      return removeCardReducer(state, action);
+    case 'CLEAR_TABLE':
+      return clearTableReducer(state, action);
     default:
       return state;
   }
