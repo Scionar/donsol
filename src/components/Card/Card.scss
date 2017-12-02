@@ -1,0 +1,19 @@
+.card {
+  background-color: #FFF;
+  display: inline-block;
+  position: relative;
+  width: calc(25% - 2rem);
+
+  &:before {
+    content: '';
+    display: inline-block;
+    padding-top: 150%;
+  }
+}
+
+.card__card-id {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

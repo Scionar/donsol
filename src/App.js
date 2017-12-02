@@ -4,6 +4,7 @@ import Message from './components/Message/Message';
 import Health from './components/Health/Health';
 import Experience from './components/Experience/Experience';
 import Shield from './components/Shield/Shield';
+import CardContainer from './containers/CardContainer/CardContainer';
 
 class App extends Component {
   render() {
@@ -15,8 +16,8 @@ class App extends Component {
           <Shield />
           <Experience />
         </header>
-        <main>
-          // todo: Cards
+        <main className="main">
+          <CardContainer />
         </main>
       </div>
     );
