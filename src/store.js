@@ -7,6 +7,7 @@ import { reducer as takeHealthReducer } from './redux-actions/take-health';
 import { reducer as addExperienceReducer } from './redux-actions/add-experience';
 import { reducer as pickShieldReducer } from './redux-actions/pick-shield';
 import { reducer as useCardReducer } from './redux-actions/use-card';
+import { reducer as setMessageReducer } from './redux-actions/set-message';
 
 const initialState = {
   deck: [
@@ -18,7 +19,8 @@ const initialState = {
   table: [],
   hp: 21,
   dp: 0,
-  xp: 0
+  xp: 0,
+  message: ''
 };
 
 // const persistState = localStorage.getItem('reduxState')
@@ -45,6 +47,8 @@ const rootReducer = (state = persistState, action) => {
       return pickShieldReducer(state, action);
     case 'USE_CARD':
       return useCardReducer(state, action);
+    case 'SET_MESSAGE':
+      return setMessageReducer(state, action);
     default:
       return state;
   }

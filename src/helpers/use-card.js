@@ -6,6 +6,8 @@ import { action as takeHealthAction } from '../redux-actions/take-health';
 import { action as addExperienceAction } from '../redux-actions/add-experience';
 import { action as pickShieldAction } from '../redux-actions/pick-shield';
 import { action as useCardAction } from '../redux-actions/use-card';
+import { action as setMessageAction } from '../redux-actions/set-message';
+
 
 export default card => {
   const cardType = card[0];
@@ -15,12 +17,15 @@ export default card => {
 
   if (cardType === 'c' || cardType === 's') {
     store.dispatch(takeHitAction(cardValue));
+    store.dispatch(setMessageAction('Battled monster'));
   }
   else if (cardType === 'h') {
     store.dispatch(takeHealthAction(cardValue));
+    store.dispatch(setMessageAction('Drank potion.'));
   }
   else if (cardType === 'd') {
     store.dispatch(pickShieldAction(cardValue));
+    store.dispatch(setMessageAction('Equipped shield.'));
   }
 
   store.dispatch(addExperienceAction(1));
