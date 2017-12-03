@@ -8,6 +8,13 @@ class Card extends React.Component {
       used: false,
     }
     this.getClasses = this.getClasses.bind(this);
+    this.useCard = this.useCard.bind(this);
+  }
+
+  useCard() {
+    this.setState({
+      used: true
+    });
   }
 
   getClasses() {
@@ -19,7 +26,7 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className={this.getClasses()}>
+      <div className={this.getClasses()} onClick={this.useCard}>
         <div className="card__card-id">
           {this.props.type}
         </div>
