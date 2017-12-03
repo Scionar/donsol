@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Card from '../../components/Card/Card';
-import renewTable from '../../helpers/renew-table';
 
 class CardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.printCards = this.printCards.bind(this);
-    renewTable();
   }
 
   printCards() {
