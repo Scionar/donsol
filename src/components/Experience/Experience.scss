@@ -16,7 +16,7 @@
   }
 
   &:after {
-    background-color: #0F0;
+    background-color: #FFF;
     content: '';
     display: inline-block;
     height: 1px;
@@ -28,11 +28,11 @@
 }
 
 @mixin experience-bar($points) {
-  width: (100% / 21 * $points);
+  width: (100% / 52 * $points);
 }
 
 $i: 1;
-@while $i <= 21 {
+@while $i <= 52 {
   .experience_#{$i}:after { @include experience-bar($i); }
   $i: $i + 1;
 }

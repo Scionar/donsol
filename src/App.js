@@ -14,7 +14,7 @@ class App extends Component {
         <header className="header">
           <Message />
           <Health hp={this.props.hp} />
-          <Shield />
+          <Shield dp={this.props.dp} />
           <Experience xp={this.props.xp} />
         </header>
         <main className="main">
@@ -27,7 +27,8 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   hp: state.hp,
-  xp: state.xp
+  xp: state.xp,
+  dp: state.dp
 });
 
 export default connect(mapStateToProps)(App);

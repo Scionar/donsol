@@ -1,6 +1,38 @@
 .shield {
-  border-bottom: 1px solid #FFF;
   color: #FFF;
+  position: relative;
   line-height: 4rem;
   width: calc(50% / 3);
+
+  &:before {
+    background-color: #555;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &:after {
+    background-color: #0F0;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 0.25s;
+  }
+}
+
+@mixin shield-bar($points) {
+  width: (100% / 13 * $points);
+}
+
+$i: 1;
+@while $i <= 13 {
+  .shield_#{$i}:after { @include shield-bar($i); }
+  $i: $i + 1;
 }

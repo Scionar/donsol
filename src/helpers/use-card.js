@@ -2,6 +2,7 @@ import store from '../store';
 import { action as takeHitAction } from '../redux-actions/take-hit';
 import { action as takeHealthAction } from '../redux-actions/take-health';
 import { action as addExperienceAction } from '../redux-actions/add-experience';
+import { action as pickShieldAction } from '../redux-actions/pick-shield';
 
 export default card => {
   const cardType = card[0];
@@ -14,7 +15,7 @@ export default card => {
     store.dispatch(takeHealthAction(cardValue));
   }
   else if (cardType === 'd') {
-    // todo: Redux action to get shield.
+    store.dispatch(pickShieldAction(cardValue));
   }
 
   store.dispatch(addExperienceAction(1));

@@ -5,6 +5,7 @@ import { reducer as clearTableReducer } from './redux-actions/clear-table';
 import { reducer as takeHitReducer } from './redux-actions/take-hit';
 import { reducer as takeHealthReducer } from './redux-actions/take-health';
 import { reducer as addExperienceReducer } from './redux-actions/add-experience';
+import { reducer as pickShieldReducer } from './redux-actions/pick-shield';
 
 
 const initialState = {
@@ -40,6 +41,8 @@ const rootReducer = (state = persistState, action) => {
       return takeHealthReducer(state, action);
     case 'ADD_EXPERIENCE':
       return addExperienceReducer(state, action);
+    case 'PICK_SHIELD':
+      return pickShieldReducer(state, action);
     default:
       return state;
   }
