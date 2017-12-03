@@ -2,6 +2,10 @@ import { createStore } from 'redux';
 import { reducer as addCardReducer } from './redux-actions/add-card';
 import { reducer as removeCardReducer } from './redux-actions/remove-card';
 import { reducer as clearTableReducer } from './redux-actions/clear-table';
+import { reducer as takeHitReducer } from './redux-actions/take-hit';
+import { reducer as takeHealthReducer } from './redux-actions/take-health';
+import { reducer as addExperienceReducer } from './redux-actions/add-experience';
+
 
 const initialState = {
   deck: [
@@ -30,6 +34,12 @@ const rootReducer = (state = persistState, action) => {
       return removeCardReducer(state, action);
     case 'CLEAR_TABLE':
       return clearTableReducer(state, action);
+    case 'TAKE_HIT':
+      return takeHitReducer(state, action);
+    case 'TAKE_HEALTH':
+      return takeHealthReducer(state, action);
+    case 'ADD_EXPERIENCE':
+      return addExperienceReducer(state, action);
     default:
       return state;
   }

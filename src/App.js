@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Message from './components/Message/Message';
 import Health from './components/Health/Health';
@@ -12,9 +13,9 @@ class App extends Component {
       <div className="app">
         <header className="header">
           <Message />
-          <Health />
+          <Health hp={this.props.hp} />
           <Shield />
-          <Experience />
+          <Experience xp={this.props.xp} />
         </header>
         <main className="main">
           <CardContainer />
@@ -24,4 +25,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  hp: state.hp,
+  xp: state.xp
+});
+
+export default connect(mapStateToProps)(App);

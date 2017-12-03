@@ -1,4 +1,5 @@
 import React from 'react';
+import useCard from '../../helpers/use-card';
 import './Card.css';
 
 class Card extends React.Component {
@@ -8,13 +9,14 @@ class Card extends React.Component {
       used: false,
     }
     this.getClasses = this.getClasses.bind(this);
-    this.useCard = this.useCard.bind(this);
+    this.clickCard = this.clickCard.bind(this);
   }
 
-  useCard() {
+  clickCard() {
     this.setState({
       used: true
     });
+    useCard(this.props.type);
   }
 
   getClasses() {
@@ -26,7 +28,7 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className={this.getClasses()} onClick={this.useCard}>
+      <div className={this.getClasses()} onClick={this.clickCard}>
         <div className="card__card-id">
           {this.props.type}
         </div>

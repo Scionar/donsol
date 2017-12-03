@@ -1,6 +1,38 @@
 .health {
-  border-bottom: 1px solid #FFF;
   color: #FFF;
   line-height: 4rem;
+  position: relative;
   width: calc(50% / 3);
+
+  &:before {
+    background-color: #555;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &:after {
+    background-color: #F00;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 0.25s;
+  }
+}
+
+@mixin health-bar($points) {
+  width: (100% / 21 * $points);
+}
+
+$i: 1;
+@while $i <= 21 {
+  .health_#{$i}:after { @include health-bar($i); }
+  $i: $i + 1;
 }
