@@ -7,7 +7,7 @@ export default () => {
   store.dispatch(clearTableAction());
   for (let i = 0; i < 4; i++) {
     const deck = store.getState().deck;
-    const randomIndex = Math.floor((Math.random() * deck.length) + 1);
+    const randomIndex = Math.floor((Math.random() * deck.length));
     const card = deck[randomIndex];
 
     if (card) {

@@ -5,24 +5,18 @@ import './Card.css';
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      used: false,
-    }
     this.getClasses = this.getClasses.bind(this);
     this.clickCard = this.clickCard.bind(this);
   }
 
   clickCard() {
-    this.setState({
-      used: true
-    });
-    useCard(this.props.type);
+    useCard(this.props.name);
   }
 
   getClasses() {
     const classList = ['card'];
-    if (['h', 'd'].includes(this.props.type[0])) classList.push('card_red');
-    if (this.state.used === true) classList.push('card_used');
+    if (['h', 'd'].includes(this.props.name[0])) classList.push('card_red');
+    if (this.props.used === true) classList.push('card_used');
     return classList.join(' ');
   }
 
@@ -30,7 +24,7 @@ class Card extends React.Component {
     return (
       <div className={this.getClasses()} onClick={this.clickCard}>
         <div className="card__card-id">
-          {this.props.type}
+          {this.props.name}
         </div>
       </div>
     );

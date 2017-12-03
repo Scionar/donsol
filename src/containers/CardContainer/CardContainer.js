@@ -12,7 +12,7 @@ class CardContainer extends React.Component {
 
   printCards() {
     const data = this.props.table;
-    return data.map((current, index) => (<Card key={index} type={current} />));
+    return data.map((current, index) => (<Card key={index} name={current.name} used={current.used} />));
   }
 
   render() {

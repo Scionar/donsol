@@ -6,7 +6,7 @@ import { reducer as takeHitReducer } from './redux-actions/take-hit';
 import { reducer as takeHealthReducer } from './redux-actions/take-health';
 import { reducer as addExperienceReducer } from './redux-actions/add-experience';
 import { reducer as pickShieldReducer } from './redux-actions/pick-shield';
-
+import { reducer as useCardReducer } from './redux-actions/use-card';
 
 const initialState = {
   deck: [
@@ -43,6 +43,8 @@ const rootReducer = (state = persistState, action) => {
       return addExperienceReducer(state, action);
     case 'PICK_SHIELD':
       return pickShieldReducer(state, action);
+    case 'USE_CARD':
+      return useCardReducer(state, action);
     default:
       return state;
   }

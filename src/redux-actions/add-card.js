@@ -6,6 +6,6 @@ export const action = card => ({
 export const reducer = (state, action) => {
   return {
     ...state,
-    table: [ ...state.table, action.card]
+    table: [ ...state.table, { name: action.card, used: false}]
   };
 };
