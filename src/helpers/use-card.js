@@ -1,4 +1,6 @@
 import store from '../store';
+import isTableEmpty from './is-table-empty';
+import renewTable from './renew-table';
 import { action as takeHitAction } from '../redux-actions/take-hit';
 import { action as takeHealthAction } from '../redux-actions/take-health';
 import { action as addExperienceAction } from '../redux-actions/add-experience';
@@ -22,6 +24,10 @@ export default card => {
   }
 
   store.dispatch(addExperienceAction(1));
+
+  if (isTableEmpty()) {
+    renewTable();
+  }
 
   // todo: Check game status functions here.
 }
