@@ -9,6 +9,7 @@ import { reducer as pickShieldReducer } from './redux-actions/pick-shield';
 import { reducer as useCardReducer } from './redux-actions/use-card';
 import { reducer as setMessageReducer } from './redux-actions/set-message';
 import { reducer as setStatusReducer } from './redux-actions/set-status';
+import { reducer as setRunStatusReducer } from './redux-actions/set-run-status';
 
 const initialState = {
   deck: [
@@ -22,7 +23,8 @@ const initialState = {
   dp: 0,
   xp: 0,
   message: '',
-  status: 'stop'
+  status: 'stop',
+  lastRun: false
 };
 
 // const persistState = localStorage.getItem('reduxState')
@@ -55,6 +57,8 @@ const rootReducer = (state = persistState, action) => {
       return setMessageReducer(state, action);
     case 'SET_STATUS':
       return setStatusReducer(state, action);
+    case 'SET_RUN_STATUS':
+      return setRunStatusReducer(state, action);
     default:
       return state;
   }

@@ -9,6 +9,7 @@ import { action as pickShieldAction } from '../redux-actions/pick-shield';
 import { action as useCardAction } from '../redux-actions/use-card';
 import { action as setMessageAction } from '../redux-actions/set-message';
 import { action as setStatusAction } from '../redux-actions/set-status';
+import { action as setRunStatusAction } from '../redux-actions/set-run-status';
 
 export default card => {
   const cardType = card[0];
@@ -39,6 +40,7 @@ export default card => {
     }
 
     if (isTableEmpty()) {
+      store.dispatch(setRunStatusAction(false));
       renewTable();
     }
   }
