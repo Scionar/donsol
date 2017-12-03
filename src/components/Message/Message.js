@@ -9,7 +9,7 @@ class Message extends React.Component {
   }
 
   renderStartButton() {
-    if (this.props.gameStatus === 'stopped') return (<div onClick={startNewGame} className="message__button">Start</div>);
+    if (this.props.gameStatus !== 'on') return (<div onClick={startNewGame} className="message__button">Start</div>);
   }
 
   render() {

@@ -22,7 +22,7 @@ const initialState = {
   dp: 0,
   xp: 0,
   message: '',
-  status: 'stopped'
+  status: 'stop'
 };
 
 // const persistState = localStorage.getItem('reduxState')
@@ -33,6 +33,8 @@ const persistState = initialState;
 
 const rootReducer = (state = persistState, action) => {
   switch (action.type) {
+    case 'RESET':
+      return initialState;
     case 'ADD_CARD':
       return addCardReducer(state, action);
     case 'REMOVE_CARD':
