@@ -14,7 +14,7 @@ class App extends Component {
         <header className="header">
           <Message canRun={!this.props.lastRun} gameStatus={this.props.gameStatus} message={this.props.message} />
           <Health hp={this.props.hp} />
-          <Shield dp={this.props.dp} />
+          <Shield monster={this.props.previousMonster} dp={this.props.dp} />
           <Experience xp={this.props.xp} />
         </header>
         <main className="main">
@@ -31,7 +31,8 @@ const mapStateToProps = state => ({
   dp: state.dp,
   message: state.message,
   gameStatus: state.status,
-  lastRun: state.lastRun
+  lastRun: state.lastRun,
+  previousMonster: state.previousMonster
 });
 
 export default connect(mapStateToProps)(App);
