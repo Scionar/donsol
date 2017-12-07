@@ -22,6 +22,7 @@ const initialState = {
   hp: 21,
   dp: 0,
   xp: 0,
+  previousMonster: null,
   message: '',
   status: 'stop',
   lastRun: false
